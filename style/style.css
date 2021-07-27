@@ -5,11 +5,12 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
     padding: 0 15px;
+    border-bottom: 1px solid rgb(219, 216, 216);
 }
 
 #top {
@@ -23,6 +24,20 @@ header {
 
 #title {
     vertical-align: middle;
-    font-size: 22px;
+    font-size: 20px;
     color: rgb(102, 102, 102);
+}
+
+nav li {
+    display: inline-block;
+    font-weight: 500;
+    color:rgb(102, 102, 102);
+    margin-right: 40px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+nav li:last-child {
+    color: #3367D6;
+    border-bottom: 2px solid #3367D6;
 }
