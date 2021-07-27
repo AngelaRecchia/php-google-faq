@@ -58,8 +58,12 @@ main section {
     color:rgb(66, 66, 66);
 }
 
-main p {
+main p, main li {
     margin: 30px 0;
     line-height: 1.6;
     font-size: 15px;
+}
+
+main ol {
+    margin-left: 15px;
 }

@@ -25,6 +25,21 @@
             "Scopri quali misure adottiamo per garantire protezione e sicurezza alle tue informazioni personali, lasciando a te il controllo."
             ]
         ],
+        [
+            'q' => "Perché il mio account è associato a un paese?",
+            'a' => [
+                "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",
+                'ol' => [
+                    ["La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
+                    'ola' => [
+                        "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
+                        "Google LLC, con sede negli Stati Uniti, per il resto del mondo."
+                    ]],
+                    ["La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali."]
+                ],
+                "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account."
+            ]
+        ],
         
     ]
 ?>
@@ -65,22 +80,63 @@
 
     <main>
         <?php 
-        foreach($faqs as $faq) {
+            foreach($faqs as $faq) {
         ?>
-        <section>
-            <div class="question"><?php echo $faq['q']?></div>
+            <section>
 
-            <?php foreach($faq['a'] as $par) {
-            ?>
+                <div class="question"><?php echo $faq['q']?></div>
 
-            <p><?php echo $par ?></p>
+                <?php 
+                    foreach($faq['a'] as $key => $par) {
+                        if (is_numeric($key)) {
+                ?>
+                            <p><?php echo $par?></p>
+                    <?php
+                        }
+                        else {
+                    ?>
+                            <ol>
+                                <?php 
+                                    foreach ($par as $ol) {
+                                        foreach($ol as $olKey => $li ) {
+                                ?>
+                                            <li>
+                                                <?php 
+                                                    if (is_numeric($olKey)) echo $li; 
+                                                    else {
+                                                ?>
 
-            <?php
-            }
-            ?>
-        </section>
+                                                        <ol type="a">
+                                                            <?php 
+                                                                foreach ($li as $subLi) {
+                                                            ?>
+    
+                                                                <li><?php echo $subLi ?></li>
+                                                                
+                                                            <?php
+                                                                }
+                                                            ?>
+                                                        </ol>
+
+                                                <?php
+                                                    }
+                                                ?>
+                                            </li>
+                                <?php
+                                        }
+                                    }
+                                ?>
+                            </ol>
+
+                <?php
+                        }
+                    }
+                ?>
+
+            </section>
+
         <?php
-        }
+            }
         ?>
     </main>
 </body>
