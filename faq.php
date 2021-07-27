@@ -110,17 +110,17 @@
                             <ol>
                                 <?php 
                                     foreach ($par as $ol) {
-                                        foreach($ol as $olKey => $li ) {
                                 ?>
+                                           
                                             <li>
                                                 <?php 
-                                                    if (is_numeric($olKey)) echo $li; 
-                                                    else {
+                                                    echo $ol[0];
+                                                    if(array_key_exists('ola', $ol)) {
                                                 ?>
 
                                                         <ol type="a">
                                                             <?php 
-                                                                foreach ($li as $subLi) {
+                                                                foreach($ol['ola'] as $subLi) {
                                                             ?>
 
                                                                 <li><?php echo $subLi ?></li>
@@ -135,7 +135,7 @@
                                                 ?>
                                             </li>
                                 <?php
-                                        }
+                                        
                                     }
                                 ?>
                             </ol>
