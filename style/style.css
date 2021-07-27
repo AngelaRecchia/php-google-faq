@@ -67,3 +67,10 @@ main p, main li {
 main ol {
     margin-left: 15px;
 }
+
+.subs {
+    font-size: 18px;
+    font-weight: 500;
+    color:rgb(66, 66, 66);
+    margin-top: 50px;
+}
