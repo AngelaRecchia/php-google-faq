@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    padding: 0 15px;
+}
+
+#top {
+    padding: 20px 0;
+}
+
+#top img {
+    height: 25px;
+    vertical-align: middle;
+}
+
+#title {
+    vertical-align: middle;
+    font-size: 22px;
+    color: rgb(102, 102, 102);
+}
